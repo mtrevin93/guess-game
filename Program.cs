@@ -1,16 +1,5 @@
 ﻿using System;
 
-// Phase 1
-// The program should...
-// 1. Display a message to the user asking them to guess the secret number.
-// 2. Display a prompt for the user's guess.
-// 3. Take the user's guess as input and save it as a variable.
-// 4. Display the user's guess back to the screen.
-// Phase 2
-// The program should be updated to...
-// 1. Create a variable to contain the secret number. This number should be hard-coded for now. 42 is a nice number.
-// 2. No longer display the user's guess. They know what they guessed, right?
-// 3. Compare the user's guess with the secret number. Display a success message if the guess is correct, otherwise display a failure message.
 // Phase 3
 // The program should be updated to...
 // 1. Give the user four chances to guess the number.
@@ -42,14 +31,16 @@
 Console.WriteLine("Guess the secret number...I'm not telling");
 
 string guess = "0";
+int count = 0;
 int secretNumber = 42;
 
-while (int.Parse(guess) != secretNumber){
+while (int.Parse(guess) != secretNumber && count < 4){
     guess = Console.ReadLine();
     Console.WriteLine();
     if (int.Parse(guess) != secretNumber){
     Console.WriteLine($"Nope!");
     Console.WriteLine("Guess the secret number...I'm not telling");
+    count ++;
     }
     else {
         Console.WriteLine("Dang, I was having fun...");
