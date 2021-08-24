@@ -14,28 +14,41 @@
 // The program should be updated to...
 // 1. Add a difficulty level of "Cheater" which will cause the program to continue prompting the user until they get the answer correct.
 
+int count = 0;
+
+Console.WriteLine("Pick a difficulty level...(Easy, Medium, Hard)");
+string difficulty = Console.ReadLine().ToLower();
+if (difficulty == "easy"){
+    count = 0;
+}
+if (difficulty == "medium"){
+    count = 2;
+}
+if (difficulty == "hard"){
+    count = 4;
+}
+
 Console.WriteLine("Guess the secret number...I'm not telling");
 
 string guess = "0";
-int count = 0;
 int secretNumber = new Random().Next(1,100);
 
-while (int.Parse(guess) != secretNumber && count < 4){
+while (int.Parse(guess) != secretNumber && count < 8){
     guess = Console.ReadLine();
     Console.WriteLine();
     if (int.Parse(guess) != secretNumber){
         Console.WriteLine($"Nope!");
-        if (count < 4)
+        if (count < 8)
         count ++;
-        if (count == 4){
+        if (count == 8){
             Console.WriteLine("Out of guesses! Too bad, so sad!");
             break;
         }
         if (int.Parse(guess) < secretNumber){
-            Console.WriteLine($"{4 - count} Guesses left to guess the secret number...Try higer");
+            Console.WriteLine($"{8 - count} Guesses left to guess the secret number...Try higer");
         }
         if (int.Parse(guess) > secretNumber){
-        Console.WriteLine($"{4 - count} Guesses left to guess the secret number...Try lower");
+        Console.WriteLine($"{8 - count} Guesses left to guess the secret number...Try lower");
         }
     }
     else {
