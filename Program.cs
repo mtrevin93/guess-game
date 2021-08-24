@@ -1,13 +1,7 @@
 ﻿using System;
 
 
-// Phase 5
-// The program should be updated to...
-// 1. Use a random number between 1 and 100 instead of a hard-coded number.
-// 2. The prompt should display the number of guesses the user has left.
-// Phase 6
-// The program should be updated to...
-// 1. Inform the user if their guess was too high or too low, when they guess incorrectly.
+
 // Phase 7
 // The program should be updated to...
 // 1. Prompt the user for a difficulty level before they are prompted to guess the number.
@@ -33,7 +27,16 @@ while (int.Parse(guess) != secretNumber && count < 4){
         Console.WriteLine($"Nope!");
         if (count < 4)
         count ++;
-        Console.WriteLine($"{4 - count} Guesses left to guess the secret number...");
+        if (count == 4){
+            Console.WriteLine("Out of guesses! Too bad, so sad!");
+            break;
+        }
+        if (int.Parse(guess) < secretNumber){
+            Console.WriteLine($"{4 - count} Guesses left to guess the secret number...Try higer");
+        }
+        if (int.Parse(guess) > secretNumber){
+        Console.WriteLine($"{4 - count} Guesses left to guess the secret number...Try lower");
+        }
     }
     else {
         Console.WriteLine("Dang, I was having fun...");
