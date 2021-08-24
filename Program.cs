@@ -24,7 +24,7 @@ Console.WriteLine("Guess the secret number...I'm not telling");
 
 string guess = "0";
 int count = 0;
-int secretNumber = 42;
+int secretNumber = new Random().Next(1,100);
 
 while (int.Parse(guess) != secretNumber && count < 4){
     guess = Console.ReadLine();
