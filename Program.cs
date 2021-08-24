@@ -39,3 +39,17 @@
 // The program should be updated to...
 // 1. Add a difficulty level of "Cheater" which will cause the program to continue prompting the user until they get the answer correct.
 
+Console.WriteLine("Guess the secret number...I'm not telling");
+
+string guess = "0";
+int secretNumber = 42;
+
+while (int.Parse(guess) != secretNumber){
+    guess = Console.ReadLine();
+    Console.WriteLine();
+    if (int.Parse(guess) != secretNumber){
+    Console.WriteLine($"I can't believe you thought it was {guess}!");
+    Console.WriteLine("Guess the secret number...I'm not telling");
+    }
+}
+
