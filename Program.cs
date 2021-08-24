@@ -48,8 +48,11 @@ while (int.Parse(guess) != secretNumber){
     guess = Console.ReadLine();
     Console.WriteLine();
     if (int.Parse(guess) != secretNumber){
-    Console.WriteLine($"I can't believe you thought it was {guess}!");
+    Console.WriteLine($"Nope!");
     Console.WriteLine("Guess the secret number...I'm not telling");
+    }
+    else {
+        Console.WriteLine("Dang, I was having fun...");
     }
 }
 
