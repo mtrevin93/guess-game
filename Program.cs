@@ -1,14 +1,6 @@
 ﻿using System;
 
-// Phase 3
-// The program should be updated to...
-// 1. Give the user four chances to guess the number.
-// 2. Continue to display the success or failure messages as in phase 2
-// Phase 4
-// The program should be updated to...
-// 1. Display the number of the user's current guess in the prompt.  
-//    For example, if the user has already guessed one time, the prommpt should say something like Your guess (2)>.
-// 2. End the loop early if the user guesses the correct number.
+
 // Phase 5
 // The program should be updated to...
 // 1. Use a random number between 1 and 100 instead of a hard-coded number.
@@ -38,9 +30,10 @@ while (int.Parse(guess) != secretNumber && count < 4){
     guess = Console.ReadLine();
     Console.WriteLine();
     if (int.Parse(guess) != secretNumber){
-    Console.WriteLine($"Nope!");
-    Console.WriteLine("Guess the secret number...I'm not telling");
-    count ++;
+        Console.WriteLine($"Nope!");
+        if (count < 4)
+        count ++;
+        Console.WriteLine($"{4 - count} Guesses left to guess the secret number...");
     }
     else {
         Console.WriteLine("Dang, I was having fun...");
